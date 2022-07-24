@@ -1,0 +1,13 @@
+{
+  "expo": {},
+  "app": {
+    "ios": {
+      "name": "BindIdAppExample",
+      "displayName": "BindId React-Native"
+    },
+    "android": {
+      "name": "BindidReactNativeExample",
+      "displayName": "BindIdReactNative Example"
+    }
+  }
+}
