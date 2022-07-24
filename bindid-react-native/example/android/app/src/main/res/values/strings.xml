@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">BindidReactNative Example</string>
+  <string name="bid_scheme">bindid</string>
+  <string name="bid_host">mobile-app-example</string>
+</resources>
