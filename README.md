@@ -48,6 +48,14 @@ Please follow the [Android Redirection setup](https://developer.bindid.io/docs/g
 
 ## Installation
 
+Install GitHub hosted NPM package in your project
+You should add to your global `~/.npmrc` or your project level `.npmrc` file the following line to route to Transmit Security packages on Github for installation.
+
+```
+@transmitsecurity:registry=https://npm.pkg.github.com
+
+```
+
 ```sh
 # npm
 $ npm install --save @transmitsecurity/bindid-react-native
@@ -62,8 +70,8 @@ $ yarn add @transmitsecurity/bindid-react-native
 
 ```tsx
 
-import XmBindIdSdk from 'bindid-react-native';
-import type {  XmBindIdServerEnvironment, XmBindIdConfig } from "bindid-react-native/src/transmit-bind-id-api";
+import XmBindIdSdk from '@transmitsecurity/bindid-react-native';
+import type {  XmBindIdServerEnvironment, XmBindIdConfig } from "@transmitsecurity/bindid-react-native/src/transmit-bind-id-api";
 
 //...
 
@@ -96,8 +104,8 @@ import type {  XmBindIdServerEnvironment, XmBindIdConfig } from "bindid-react-na
 
 ```tsx
 
-import XmBindIdSdk from 'bindid-react-native';
-import type { XmBindIdAuthenticationRequest , XmBindIdResponse } from "bindid-react-native/src/transmit-bind-id-api";
+import XmBindIdSdk from '@transmitsecurity/bindid-react-native';
+import type { XmBindIdAuthenticationRequest , XmBindIdResponse } from "@transmitsecurity/bindid-react-native/src/transmit-bind-id-api";
 
 //...
 
@@ -119,8 +127,8 @@ import type { XmBindIdAuthenticationRequest , XmBindIdResponse } from "bindid-re
 
 ```tsx
 
-import XmBindIdSdk from 'bindid-react-native';
-import type { XmBindIdAuthenticationRequest , XmBindIdResponse, XmBindIdTransactionSigningRequest, XmBindIdTransactionSigningDisplayData, XmBindIdTransactionSigningData } from "bindid-react-native/src/transmit-bind-id-api";
+import XmBindIdSdk from '@transmitsecurity/bindid-react-native';
+import type { XmBindIdAuthenticationRequest , XmBindIdResponse, XmBindIdTransactionSigningRequest, XmBindIdTransactionSigningDisplayData, XmBindIdTransactionSigningData } from "@transmitsecurity/bindid-react-native/src/transmit-bind-id-api";
 
 //...
 
@@ -155,8 +163,8 @@ import type { XmBindIdAuthenticationRequest , XmBindIdResponse, XmBindIdTransact
 
 ```tsx
 
-import XmBindIdSdk from 'bindid-react-native';
-import type { XmBindIdExchangeTokenResponse } from "bindid-react-native/src/transmit-bind-id-api";
+import XmBindIdSdk from '@transmitsecurity/bindid-react-native';
+import type { XmBindIdExchangeTokenResponse } from "@transmitsecurity/bindid-react-native/src/transmit-bind-id-api";
 
 //...
 
