@@ -50,10 +50,10 @@ Please follow the [Android Redirection setup](https://developer.bindid.io/docs/g
 
 ```sh
 # npm
-$ npm install --save bindid-react-native
+$ npm install --save @transmitsecurity/bindid-react-native
 
 # Yarn
-$ yarn add bindid-react-native
+$ yarn add @transmitsecurity/bindid-react-native
 ```
 
 ## Usage

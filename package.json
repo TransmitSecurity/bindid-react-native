@@ -1,5 +1,5 @@
 {
-  "name": "bindid-react-native",
+  "name": "@transmitsecurity/bindid-react-native",
   "version": "1.0.0",
   "description": "React Native SDK for BindID SDK",
   "main": "lib/commonjs/index.js",
