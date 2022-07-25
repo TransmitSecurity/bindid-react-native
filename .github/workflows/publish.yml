@@ -16,8 +16,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@transmitsecurity'
           node-version: 16
-      - run: npm install
-      - run: npm run build
-      - run: npm publish --access public
+      - run: yarn install
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
