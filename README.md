@@ -48,13 +48,25 @@ Please follow the [Android Redirection setup](https://developer.bindid.io/docs/g
 
 ## Installation
 
-Install GitHub hosted NPM package in your project
-You should add to your global `~/.npmrc` or your project level `.npmrc` file the following line to route to Transmit Security packages on Github for installation.
+### [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)
 
-```
-@transmitsecurity:registry=https://npm.pkg.github.com
+You need an access token to install packages, You can use a personal access token (PAT) to authenticate to GitHub Packages or the GitHub API.
 
-```
+1. Create a GitHub personal access token [PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+2. Authenticate by adding your personal access token to your ~/.npmrc file, edit the ~/.npmrc file for your project to include the following line, replacing TOKEN with your personal access token. Create a new ~/.npmrc file if one doesn't exist.
+
+    ```
+    //npm.pkg.github.com/:_authToken=TOKEN
+    ```
+
+3. Add to the global `~/.npmrc` or the project level `.npmrc` file the following line to route to Transmit Security packages on Github for installation.
+
+    ```
+    @transmitsecurity:registry=https://npm.pkg.github.com
+    ```
+
+Install the bindid-react-native package
 
 ```sh
 # npm
