@@ -34,8 +34,9 @@ Here's how it works:
 
 Before you begin, you'll need to have an application configured in the [BindID Admin Portal](https://admin.bindid-sandbox.io/console/#/applications). From the application settings, obtain the client credentials and configure a redirect URI for this client that will receive the authentication result.
 
-- Example ClientID: `XXXXXXX.XXXXXXXX.dev_6fa9320b.bindid.io"` (This is auto generated in the console)
-- Example RedirectURI: `bindidexample://login`
+- Example CLIENT_ID: `XXXXXXX.XXXXXXXX.dev_6fa9320b.bindid.io"` (This is auto generated in the console)
+- Example REDIRECT_URI: `bindidexample://login`
+- CUSTOM_SERVER_URL: The BindId server that you work with. (Example: `signin.bindid-sandbox.io`), You can use the Sandbox/Production environment instead.
 
 For more, see [BindID Admin Portal: Get Started](https://developer.bindid.io/docs/guides/admin_portal/topics/getStarted/get_started_admin_portal).
 
@@ -47,12 +48,32 @@ Please follow the [Android Redirection setup](https://developer.bindid.io/docs/g
 
 ## Installation
 
+### [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)
+
+You need an access token to install packages, You can use a personal access token (PAT) to authenticate to GitHub Packages or the GitHub API.
+
+1. Create a GitHub personal access token [PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+2. Authenticate by adding your personal access token to your ~/.npmrc file, edit the ~/.npmrc file for your project to include the following line, replacing TOKEN with your personal access token. Create a new ~/.npmrc file if one doesn't exist.
+
+    ```
+    //npm.pkg.github.com/:_authToken=TOKEN
+    ```
+
+3. Add to the global `~/.npmrc` or the project level `.npmrc` file the following line to route to Transmit Security packages on Github for installation.
+
+    ```
+    @transmitsecurity:registry=https://npm.pkg.github.com
+    ```
+
+Install the bindid-react-native package
+
 ```sh
 # npm
-$ npm install --save bindid-react-native
+$ npm install --save @transmitsecurity/bindid-react-native
 
 # Yarn
-$ yarn add bindid-react-native
+$ yarn add @transmitsecurity/bindid-react-native
 ```
 
 ## Usage
@@ -60,13 +81,25 @@ $ yarn add bindid-react-native
 ### Initialize the SDK:
 
 ```tsx
+
+import XmBindIdSdk from '@transmitsecurity/bindid-react-native';
+import type {  XmBindIdServerEnvironment, XmBindIdConfig } from "@transmitsecurity/bindid-react-native/src/transmit-bind-id-api";
+
+//...
+
     const serverEnvironment: XmBindIdServerEnvironment = {
       environmentMode: XmBindIdServerEnvironmentMode.Other,
-      environmentUrl: "YOUR_SERVER_URL"
+      environmentUrl: "CUSTOM_SERVER_URL"
     };
 
+    /** You can use the sandbox server environment instead. */
+    // const serverEnvironment: XmBindIdServerEnvironment = {
+    //   environmentMode: XmBindIdServerEnvironmentMode.Sandbox,
+    //   environmentUrl: ""
+    // };
+
     const config: XmBindIdConfig = {
-      clientId:  "YOUR_CLIENT_ID",
+      clientId:  "CLIENT_ID",
       serverEnvironment: serverEnvironment
     };
 
@@ -82,8 +115,14 @@ $ yarn add bindid-react-native
 ### Authenticate API:
 
 ```tsx
+
+import XmBindIdSdk from '@transmitsecurity/bindid-react-native';
+import type { XmBindIdAuthenticationRequest , XmBindIdResponse } from "@transmitsecurity/bindid-react-native/src/transmit-bind-id-api";
+
+//...
+
     const request: XmBindIdAuthenticationRequest = {
-        redirectUri: "YOUR_REDIRECT_URI"
+        redirectUri: "REDIRECT_URI"
         usePkce: true
     };
 
@@ -99,6 +138,12 @@ $ yarn add bindid-react-native
 ### Sign Transaction API:
 
 ```tsx
+
+import XmBindIdSdk from '@transmitsecurity/bindid-react-native';
+import type { XmBindIdAuthenticationRequest , XmBindIdResponse, XmBindIdTransactionSigningRequest, XmBindIdTransactionSigningDisplayData, XmBindIdTransactionSigningData } from "@transmitsecurity/bindid-react-native/src/transmit-bind-id-api";
+
+//...
+
     const displayData: XmBindIdTransactionSigningDisplayData = {
         payee: "John Smith",
         paymentAmount: "100$",
@@ -129,6 +174,12 @@ $ yarn add bindid-react-native
 ### Exchange Token API:
 
 ```tsx
+
+import XmBindIdSdk from '@transmitsecurity/bindid-react-native';
+import type { XmBindIdExchangeTokenResponse } from "@transmitsecurity/bindid-react-native/src/transmit-bind-id-api";
+
+//...
+
      XmBindIdSdk.exchangeToken("THE_RESPONSE_FROM_AUTHENTICATE_API/SIGN_TRANSACTION_API")
         .then((response: XmBindIdExchangeTokenResponse) => {
             console.log(`BindID Exchange Token Completed: ${JSON.stringify(response)}`);
