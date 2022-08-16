@@ -76,6 +76,18 @@ $ npm install --save @transmitsecurity/bindid-react-native
 $ yarn add @transmitsecurity/bindid-react-native
 ```
 
+### Manually
+
+Download the BindId react native package `bindid-react-native-${version}-npm.tgz` from the [packages page](https://github.com/TransmitSecurity/bindid-react-native/packages) and install the bindid-react-native package from the local path
+
+```sh
+# npm
+$ npm install --save /local_path_to_the_package/bindid-react-native-${version}-npm.tgz
+
+# Yarn
+$ yarn add /local_path_to_the_package/bindid-react-native-${version}-npm.tgz
+```
+
 ## Usage
 
 ### Initialize the SDK:
@@ -92,7 +104,7 @@ import type {  XmBindIdServerEnvironment, XmBindIdConfig } from "@transmitsecuri
       environmentUrl: "CUSTOM_SERVER_URL"
     };
 
-    /** You can use the sandbox server environment instead. */
+    /** You can use the sandbox/production server environment instead. */
     // const serverEnvironment: XmBindIdServerEnvironment = {
     //   environmentMode: XmBindIdServerEnvironmentMode.Sandbox,
     //   environmentUrl: ""

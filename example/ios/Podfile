@@ -1,7 +1,7 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '12.4'
+platform :ios, '13.0'
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'BindIdAppExample' do
@@ -38,7 +38,7 @@ target 'BindIdAppExample' do
     installer.pods_project.targets.each do |target|
       if target.name  == "bindid-react-native"
         target.build_configurations.each do |config|
-          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.4'
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
         end
       end
     end

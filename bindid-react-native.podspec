@@ -10,11 +10,11 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => "12.0" }
-  s.source       = { :git => "https://www.transmitsecurity.com.git", :tag => "#{s.version}" }
+  s.platforms    = { :ios => "13.0" }
+  s.source       = { :git => "https://github.com/TransmitSecurity/bindid-react-native.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
   s.dependency "React-Core"
-  s.dependency 'XmBindIdSDK', '~> 1.20.0'
+  s.dependency 'XmBindIdSDK', '~> 1.30.0'
 end

@@ -21,6 +21,28 @@ public class ParseIDToken {
 
   public final static String ValueNotSet = "Not Set";
 
+  public static HashMap<String, Object> parseJwtToJson(String idToken) {
+
+    HashMap<String, Object> parsedJWT = parseIdToken(idToken);
+
+    if (parsedJWT == null || parsedJWT.isEmpty()) {
+      return null;
+    } else {
+      return parsedJWT;
+    }
+
+  }
+
+  // Parse Base64 IdToken to JSON Object
+  private static HashMap<String, Object> parseIdToken(String idToken) {
+    try {
+      SignedJWT jwt = SignedJWT.parse(idToken);
+      return (HashMap<String, Object>) jwt.getPayload().toJSONObject();
+    } catch (java.text.ParseException e) {
+      return null;
+    }
+  }
+
   public static HashMap<String, Object> parse(String idToken) {
 
     String parsedToString = parseTokenToString(idToken);

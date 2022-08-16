@@ -8,6 +8,16 @@ export default {
     BindIDEnvironmentMode: XmBindIdServerEnvironmentMode.Sandbox,
 
     getHostName: (envMode: XmBindIdServerEnvironmentMode): string => {
-        return (envMode == XmBindIdServerEnvironmentMode.Sandbox) ? 'signin.bindid-sandbox.io' : 'signin.bindid.io';
+        switch(envMode) { 
+            case XmBindIdServerEnvironmentMode.Sandbox: { 
+               return  'signin.bindid-sandbox.io';
+            } 
+            case XmBindIdServerEnvironmentMode.Production: { 
+                return 'signin.bindid.io'; 
+            } 
+            default: { 
+               return 'signin.bindid-sandbox.io';
+            } 
+         } 
     }
 }
