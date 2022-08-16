@@ -19,9 +19,9 @@ Template
 
 #### Bug Fixes
 1. General bug fixes and performance improvement.
-1. Fixed an issue where the parse API crash in parsing JWT.
-1. Fixed an issue where locking the device freezing the activity loading in iOS. 
-1. Fixed an issue where saving to keychain with access control biometric failed on iOS simulator 15.x.
+1. Fixed an issue where the parse API crashed in parsing JWT.
+1. Fixed an issue where locking the device caused infinite activity loading in iOS. 
+1. Fixed an issue where saving to the Keychain with access control biometric failed on iOS simulator 15.x.
 
 ## 1.0.0 - July 2022
 ### Content
