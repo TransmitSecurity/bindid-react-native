@@ -128,7 +128,6 @@
 			mainGroup = 58B511D21A9E6C8500147676;
 			packageReferences = (
 				D317E6D12873141C00D8E291 /* XCRemoteSwiftPackageReference "bindid-ios-sdk" */,
-				D317E6D228732FC000D8E291 /* XCRemoteSwiftPackageReference "bindid-ios-sdk" */,
 			);
 			productRefGroup = 58B511D21A9E6C8500147676;
 			projectDirPath = "";
@@ -313,15 +312,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/TransmitSecurity/bindid-ios-sdk";
 			requirement = {
-				branch = release/1.20.0;
-				kind = branch;
-			};
-		};
-		D317E6D228732FC000D8E291 /* XCRemoteSwiftPackageReference "bindid-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/TransmitSecurity/bindid-ios-sdk";
-			requirement = {
-				branch = release/1.20.0;
+				branch = release/1.30.0;
 				kind = branch;
 			};
 		};

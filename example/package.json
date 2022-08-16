@@ -1,7 +1,7 @@
 {
   "name": "bindid-react-native-example",
   "description": "Example app for bindid-react-native",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -17,7 +17,8 @@
     "react-native": "^0.69.1",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",
-    "react-navigation-stack": "^2.10.4"
+    "react-navigation-stack": "^2.10.4",
+    "node-fetch": "^3.2.10"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

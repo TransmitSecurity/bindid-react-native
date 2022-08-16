@@ -74,7 +74,9 @@ declare enum XmBindIdApiCompatibilityLevel {
  */
 declare enum XmBindIdLoginHintType {
        /** Indicates that the login hint value is an email address */
-   Email
+   Email,
+       /** Indicates that the login hint value is an email verifying ticket id */
+   VerifiedEmailTicket
 }
 
 /**
@@ -364,9 +366,6 @@ displayLoader: number;
 }
 /**
  * The data that will be displayed to the user in the transaction consent.
- * NOTE if the below lengths are exceeded, transaction signing will result in failure:
- * payee, paymentMethod are limited to 40 characters each.
- * paymentAmount is limited to 15 characters.
  */
 declare interface XmBindIdTransactionSigningDisplayData { 
 
@@ -513,13 +512,13 @@ declare interface XmBindIdApprovalBaseAttribute {
 
 
 /**
- Required. Attribute label. Limited to 15 characters.
+ Required. Attribute label.
  */
 label: string;
 
 
 /**
- Required. Attribute value. Limited to 15 characters for mainAttribute and 40 characters for attributes.
+ Required. Attribute value.
  */
 value: string;
 

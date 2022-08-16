@@ -10,9 +10,12 @@ class BindidReactNative: NSObject {
     func initialize(config: NSDictionary, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
         
         var dictSwift = config.swiftDictionary
+        
         if let index = dictSwift[keyPath: "serverEnvironment.environmentMode"] as? Int {
             dictSwift[keyPath: "serverEnvironment.environmentMode"] =  XmBindIdServerEnvironmentMode.allCases[index].rawValue
-            dictSwift[keyPath: "serverEnvironment.environmentUrl"] =  XmBindIdServerEnvironmentMode.allCases[index].rawValue
+            if let environmentUrl = dictSwift[keyPath: "serverEnvironment.environmentUrl"] as? String, environmentUrl == "" {
+                dictSwift[keyPath: "serverEnvironment.environmentUrl"] =  XmBindIdServerEnvironmentMode.allCases[index].rawValue
+            }
         }
         
         if let index = dictSwift[keyPath: "apiCompat"] as? Int {
@@ -173,10 +176,8 @@ class BindidReactNative: NSObject {
         guard let decoded = try? JWTDecoder.shared.decodePayload(idToken) else {
             return reject("Error decoding JWT token", "Error decoding JWT token", nil)
         }
-        
-        let parsed = JWTParser.shared.parseIDTokenData(decoded)
-        
-        resolve(parsed)
+                
+        resolve(decoded)
     }
     
 

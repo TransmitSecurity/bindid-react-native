@@ -53,7 +53,9 @@ export class StepUpScreen extends React.Component<StepUpScreenProps, State> {
          * scope: openId is the default configuration, you can also add .email, .networkInfo, .phone
          */
 
-        this.setState({ authenticationInProgress: true });
+        this.setState({  authenticationInProgress: false,
+            isAuthenticationError: false,
+            errorMessage: "" });
 
         const request: XmBindIdAuthenticationRequest = {
             redirectUri: env.RedirectURI,
@@ -78,7 +80,10 @@ export class StepUpScreen extends React.Component<StepUpScreenProps, State> {
          * scope: openId is the default configuration, you can also add .email, .networkInfo, .phone
          */
 
-        this.setState({ authenticationInProgress: true });
+        this.setState({  
+            authenticationInProgress: false,
+            isAuthenticationError: false,
+            errorMessage: "" });
 
         const displayData: XmBindIdTransactionSigningDisplayData = {
             payee: "Jonh Depp",
