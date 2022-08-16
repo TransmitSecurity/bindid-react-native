@@ -1,6 +1,6 @@
 {
   "name": "@transmitsecurity/bindid-react-native",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Native SDK for BindID SDK",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
@@ -159,6 +159,7 @@
   },
   "dependencies": {
     "got": "^12.1.0",
+    "node-fetch": "^3.2.10",
     "parse-path": "5.0.0",
     "parse-url": "6.0.1"
   },

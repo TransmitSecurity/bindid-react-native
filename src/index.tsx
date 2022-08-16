@@ -30,7 +30,7 @@ const BindidReactNative = NativeModules.BindidReactNative
 
 // export interface BindIDError { message: string }
 export interface BindIDValidationResponse { isValid: boolean }
-export interface BindIDParseResponse { response: { [key: string]: any } }
+export interface BindIDParseResponse { response: any }
 
 /** Module API */
 

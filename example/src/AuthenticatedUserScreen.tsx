@@ -7,6 +7,7 @@ import style from './style';
 import env from './env';
 
 import type { XmBindIdExchangeTokenResponse } from "../../src/transmit-bind-id-api";
+import { Utils } from './Utils';
 
 
 type AuthenticatedUserScreenProps = {
@@ -55,7 +56,12 @@ export class AuthenticatedUserScreen extends React.Component<AuthenticatedUserSc
         }
 
         const items: PassportItem[] = this.state.sortedPassportKeys.map((key: string) => {
-            return { title: key, value: this.state.passportData[key] };
+           
+            const k =  key.toString().split(",")[0]
+            const v =  key.toString().split(",")[1]
+            console.log(`key ${k}`);
+            console.log(`value ${v}`);
+            return { title: k, value: v };
         });
 
         return (
@@ -110,14 +116,16 @@ export class AuthenticatedUserScreen extends React.Component<AuthenticatedUserSc
             return this.handleMessageError("Error parsing ID Token");
         }
 
-        const sortedPassportKeys = Object.keys(passportData).sort((a, b) => { return a.localeCompare(b) });
+        const json = JSON.stringify(passportData);
+        console.log(`Passport ${json}`);
 
-        console.log(`Passport ${JSON.stringify(sortedPassportKeys)}`);
+        const  passportDataArray = Utils.jsonObjectToArray(passportData)
+        console.log(`passportDataArray ${passportDataArray}`);
 
         this.setState({
             isLoading: false,
-            sortedPassportKeys,
-            passportData
+            sortedPassportKeys: passportDataArray,
+            passportData: passportData
         });
         
     }
@@ -144,7 +152,7 @@ export class AuthenticatedUserScreen extends React.Component<AuthenticatedUserSc
         return (
             <View>
                 <View style={styles.listItem}>
-                    <Text style={styles.itemTitle}>{item.title.substring(4, item.title.length)}</Text>
+                    <Text style={styles.itemTitle}>{item.title}</Text>
                     <Text style={styles.itemValue}>{item.value}</Text>
                 </View>
                 <View style={styles.separator}></View>

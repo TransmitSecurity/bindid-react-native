@@ -236,14 +236,12 @@ public class BindidReactNativeModule extends ReactContextBaseJavaModule {
   }
 
    private void onParse(String idToken, Promise promise) {
-     HashMap<String, Object> parsed = ParseIDToken.parse(idToken);
-     Boolean isSuccess = (Boolean) parsed.get(ParseIDToken.ResponseSuccessKey);
+     HashMap<String, Object> jsonMap = ParseIDToken.parseJwtToJson(idToken);
 
-     if (isSuccess) {
-       WritableMap passport = (WritableMap) parsed.get(ParseIDToken.ResponseParsedTokenKey);
-       promise.resolve(passport);
-     } else {
+     if (jsonMap == null || jsonMap.isEmpty()) {
        promise.reject(new Error("Error parsing ID Token"));
+     } else {
+       promise.resolve(parser.buildWriteableMap(jsonMap));
      }
 
    }

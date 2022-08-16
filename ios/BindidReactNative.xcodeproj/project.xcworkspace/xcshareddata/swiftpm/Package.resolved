@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/TransmitSecurity/bindid-ios-sdk",
       "state" : {
-        "branch" : "release/1.20.0",
-        "revision" : "177e0dfb2a0b7715387761b1f7ade73856f19f68"
+        "branch" : "release/1.30.0",
+        "revision" : "3235ab7623ff1b108e234c3e80b7d40fd8ee3fa3"
       }
     }
   ],
