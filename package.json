@@ -54,6 +54,7 @@
   "bugs": {
     "url": "https://www.transmitsecurity.com"
   },
+  "podname": "bindid-react-native",
   "homepage": "https://github.com/TransmitSecurity/bindid-react-native.git#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
