@@ -42,7 +42,7 @@ For more, see [BindID Admin Portal: Get Started](https://developer.bindid.io/doc
 
 
 #### Android Setup:
-Please follow the [Android Redirection setup](https://developer.bindid.io/docs/guides/quickstart/topics/quickstart_android#step-4-set-up-redirection) to support deeplink in your app.
+Please follow The [Android Integration setup](https://developer.bindid.io/docs/guides/quickstart/topics/quickstart_android#step-2-add-sdk-to-your-project) and [Android Redirection setup](https://developer.bindid.io/docs/guides/quickstart/topics/quickstart_android#step-4-set-up-redirection) to support deeplink in your app.
 
 -----------
 
