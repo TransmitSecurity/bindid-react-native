@@ -1,5 +1,5 @@
 PODS:
-  - bindid-react-native (1.0.1):
+  - bindid-react-native (1.0.2):
     - React-Core
     - XmBindIdSDK (~> 1.30.0)
   - boost (1.76.0)
@@ -516,7 +516,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  bindid-react-native: 9d380e2758e0f8c5befa992fe556bf6fa2bb7b75
+  bindid-react-native: 903dbb76948e63798fe2102ad2ee5257dd422608
   boost: a7c83b31436843459a1961bfd74b96033dc77234
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
@@ -568,6 +568,6 @@ SPEC CHECKSUMS:
   Yoga: ff994563b2fd98c982ca58e8cd9db2cdaf4dda74
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 4834fe7f175cf6f4ef69f10061e36d8a0a6ba455
+PODFILE CHECKSUM: 2afbee34aa701dd2f89f67316b91249dc6b498fa
 
 COCOAPODS: 1.10.1

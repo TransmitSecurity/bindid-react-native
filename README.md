@@ -42,7 +42,7 @@ For more, see [BindID Admin Portal: Get Started](https://developer.bindid.io/doc
 
 
 #### Android Setup:
-Please follow the [Android Redirection setup](https://developer.bindid.io/docs/guides/quickstart/topics/quickstart_android#step-4-set-up-redirection) to support deeplink in your app.
+Please follow The [Android Integration setup](https://developer.bindid.io/docs/guides/quickstart/topics/quickstart_android#step-2-add-sdk-to-your-project) and [Android Redirection setup](https://developer.bindid.io/docs/guides/quickstart/topics/quickstart_android#step-4-set-up-redirection) to support deeplink in your app.
 
 -----------
 
@@ -208,4 +208,17 @@ Transmit Security, https://github.com/TransmitSecurity
 ## License
 
 This project is licensed under the MIT license. See the LICENSE file for more info.
+
+## Troubleshooting
+
+#### M1 arch chip
+
+1. If you have an issue running the example project on the M1 arch chip, There is a workaround solution from Apple, [Apple Rosetta](https://support.apple.com/en-us/HT211861) that enables a Mac with Apple silicon to use apps built for a Mac with an Intel processor.
+
+2. There is another solution by excluding arm64 for the simulator architecture, both from your project and the Pod project. [Stackoverflow](https://stackoverflow.com/a/63955114).
+
+
+#### Android compile issues
+
+If you have an issue running the example project on Android, May you should change in the example app `package.json` file the **Expo** version to `44.0.6` and the **react-native** version to `0.68.2`.
 

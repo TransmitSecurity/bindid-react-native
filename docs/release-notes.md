@@ -11,6 +11,11 @@ Template
 #### EXPECTED MIGRATION CHANGES 
 --->
 
+## 1.0.2 - August 2022
+### Content
+#### Bug Fixes
+1. Fixed an issue where the current package.json name is not a valid name for a pod.
+
 ## 1.0.1 - August 2022
 ### Content
 ### Upgrade

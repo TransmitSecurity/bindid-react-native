@@ -32,7 +32,7 @@ Open `example/src/env.ts` and setup your ClientID and Redirect URI
 #### Android Setup:
 1. Open `example/android` in Android studio.
 2. Open `BindidReactNativeExample/app/src/main/res/values/strings.xml`.
-3. Change `bid_scheme` and `bid_host` according to your `RedirectURI`.
+3. Change `bid_scheme` and `bid_host` according to your `RedirectURI`. Note: `bid_scheme` must be lowercase
 
 Based on the `rnbindidexample://login` example, `bid_scheme` should be `rnbindidexample` and `bid_host` should be `login`
 

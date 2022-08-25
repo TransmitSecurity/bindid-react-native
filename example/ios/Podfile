@@ -36,11 +36,12 @@ target 'BindIdAppExample' do
     react_native_post_install(installer)
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
     installer.pods_project.targets.each do |target|
-      if target.name  == "bindid-react-native"
+      #if target.name  == "bindid-react-native"
         target.build_configurations.each do |config|
           config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+          config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = "arm64"
         end
-      end
+      #end
     end
   end
 
