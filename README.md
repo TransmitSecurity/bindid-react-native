@@ -213,7 +213,10 @@ This project is licensed under the MIT license. See the LICENSE file for more in
 
 #### M1 arch chip
 
-If you have an issue running the example project on the M1 arch chip, There is a workaround solution from Apple [Apple Rosetta](https://support.apple.com/en-us/HT211861) that enables a Mac with Apple silicon to use apps built for a Mac with an Intel processor.
+1. If you have an issue running the example project on the M1 arch chip, There is a workaround solution from Apple, [Apple Rosetta](https://support.apple.com/en-us/HT211861) that enables a Mac with Apple silicon to use apps built for a Mac with an Intel processor.
+
+2. There is another solution by excluding arm64 for the simulator architecture, both from your project and the Pod project. [Stackoverflow](https://stackoverflow.com/a/63955114).
+
 
 #### Android compile issues
 
