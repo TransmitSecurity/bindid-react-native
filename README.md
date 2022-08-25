@@ -209,3 +209,13 @@ Transmit Security, https://github.com/TransmitSecurity
 
 This project is licensed under the MIT license. See the LICENSE file for more info.
 
+## Troubleshooting
+
+#### M1 arch chip
+
+If you have an issue running the example project on the M1 arch chip, There is a workaround solution from Apple [Apple Rosetta](https://support.apple.com/en-us/HT211861) that enables a Mac with Apple silicon to use apps built for a Mac with an Intel processor.
+
+#### Android compile issues
+
+If you have an issue running the example project on Android, May you should change in the example app `package.json` file the **Expo** version to `44.0.6` and the **react-native** version to `0.68.2`.
+
