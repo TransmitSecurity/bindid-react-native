@@ -1,6 +1,6 @@
 {
   "name": "@transmitsecurity/bindid-react-native",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Native SDK for BindID SDK",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
@@ -54,6 +54,7 @@
   "bugs": {
     "url": "https://www.transmitsecurity.com"
   },
+  "podname": "bindid-react-native",
   "homepage": "https://github.com/TransmitSecurity/bindid-react-native.git#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
