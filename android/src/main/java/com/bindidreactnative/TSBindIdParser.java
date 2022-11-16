@@ -36,6 +36,7 @@ import com.ts.bindid.XmBindIdTransactionSigningData;
 import com.ts.bindid.XmBindIdTransactionSigningDisplayData;
 import com.ts.bindid.XmBindIdTransactionSigningRequest;
 import com.ts.bindid.XmRequiredVerifications;
+import com.ts.bindid.XmBindIdTokenExchangePlatformMode;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -57,9 +58,19 @@ public class TSBindIdParser {
     String environmentUrl = environment.getString("environmentUrl");
     XmBindIdServerEnvironmentMode environmentMode = TSBindIdUtils.getEnum(environment, "environmentMode", XmBindIdServerEnvironmentMode.class);
 
-    XmBindIdServerEnvironment serverEnvironment = XmBindIdServerEnvironment.createWithMode(environmentMode);
-    serverEnvironment.setEnvironmentUrl(environmentUrl);
+    XmBindIdServerEnvironment serverEnvironment;
 
+    if (environmentUrl != null && !environmentUrl.isEmpty()) {
+       serverEnvironment = XmBindIdServerEnvironment.createWithUrl(environmentUrl);
+    } else {
+       serverEnvironment = XmBindIdServerEnvironment.createWithMode(environmentMode);
+    }
+
+    if (environment.hasKey("tokenExchangePlatformMode")) {
+        XmBindIdTokenExchangePlatformMode tokenExchangePlatformMode = TSBindIdUtils.getEnum(environment, "tokenExchangePlatformMode", XmBindIdTokenExchangePlatformMode.class);
+        serverEnvironment.setTokenExchangePlatformMode(tokenExchangePlatformMode);
+    }
+    
     XmBindIdConfig config = XmBindIdConfig.create(applicationContext.getApplicationContext(), serverEnvironment, clientId);
 
     if (map.hasKey("disableStateValidation")) {

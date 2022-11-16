@@ -64,6 +64,8 @@ export class AuthenticateScreen extends React.Component<AuthenticateScreenProps,
             usePkce: true
         };
 
+        console.log(`Authentication request: ${JSON.stringify(request)}`);
+
         XmBindIdSdk.authenticate(request)
             .then((response: XmBindIdResponse) => {
                 console.log(`BindID Authentication Completed: ${JSON.stringify(response)}`);
