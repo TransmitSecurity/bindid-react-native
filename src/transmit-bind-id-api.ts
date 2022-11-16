@@ -125,6 +125,16 @@ export enum XmBindIdServerEnvironmentMode {
    Other
 }
 
+/**
+ Available BindID Token Exchange platform. Default is BindId
+ */
+export enum XmBindIdTokenExchangePlatformMode {
+       /** Use the BindId Platform for Token Exchange */
+   BindId,
+       /** Use the Transmit Platform for Token Exchange */
+   Transmit
+}
+
 export interface XmBindIdError { 
 
 
@@ -161,6 +171,12 @@ environmentMode: XmBindIdServerEnvironmentMode;
  BindID Server URL.
  */
 environmentUrl: string;
+
+
+/**
+ BindID Token Exchange Platform.
+ */
+tokenExchangePlatformMode?: XmBindIdTokenExchangePlatformMode | null;
 
 /**
  Creates an instance for the sandbox or production environment, and sets the relevant server URL.

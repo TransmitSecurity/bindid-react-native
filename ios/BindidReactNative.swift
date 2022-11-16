@@ -18,6 +18,10 @@ class BindidReactNative: NSObject {
             }
         }
         
+        if let index = dictSwift[keyPath: "serverEnvironment.tokenExchangePlatformMode"] as? Int {
+            dictSwift[keyPath: "serverEnvironment.tokenExchangePlatformMode"] = XmBindIdTokenExchangePlatformMode.allCases[index].rawValue
+        }
+
         if let index = dictSwift[keyPath: "apiCompat"] as? Int {
             dictSwift[keyPath: "apiCompat"] = XmBindIdApiCompatibilityLevel.allCases[index].rawValue
         }
