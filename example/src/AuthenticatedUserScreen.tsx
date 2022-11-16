@@ -6,6 +6,7 @@ import style from './style';
 
 import env from './env';
 
+import  type { BindIDValidationResponse } from "../../src/index";
 import type { XmBindIdExchangeTokenResponse } from "../../src/transmit-bind-id-api";
 import { Utils } from './Utils';
 
@@ -77,6 +78,8 @@ export class AuthenticatedUserScreen extends React.Component<AuthenticatedUserSc
 
     private parseIDToken = async (): Promise<void> => {
 
+        console.log(`Exchange Token: ${JSON.stringify(this.props.route.params.response)}`);
+
         XmBindIdSdk.exchangeToken(this.props.route.params.response)
             .then((response: XmBindIdExchangeTokenResponse) => {
                 console.log(`BindID Exchange Token Completed: ${JSON.stringify(response)}`);
@@ -103,10 +106,28 @@ export class AuthenticatedUserScreen extends React.Component<AuthenticatedUserSc
          }
 
          // Once we receive the ID Token response we should verify the validity of the token
-         const isValid = await XmBindIdSdk.validate(idToken, env.getHostName(env.BindIDEnvironmentMode));
-         if (!isValid) {
-            console.log("Invalid ID Token");
-             return this.handleMessageError("Invalid ID Token");
+        // const isValid = await XmBindIdSdk.validate(idToken, env.getHostName(env.BindIDEnvironmentMode));
+
+         XmBindIdSdk.validate(idToken, env.getHostName(env.BindIDEnvironmentMode))
+         .then((response: BindIDValidationResponse) => {
+             console.log(`BindID Exchange Token Completed: ${JSON.stringify(response)}`);
+            this.showPassportData(response.isValid, idToken);
+         }).catch((error: XmBindIdError) => {
+            console.log(`BindID AuthenticatExchange Token Falied: ${error.message}`);
+            this.showPassportData(false, idToken);
+         });
+
+         
+        
+    }
+
+    private showPassportData = async (isValid: boolean, idToken: string): Promise<void> => {
+
+        var errorMessage = "";
+
+        if (!isValid) {
+             console.log("Invalid ID Token");
+             errorMessage = "Invalid ID Token"
          }
          
         //Parse the ID Token to components and present them on a Flat List
@@ -124,10 +145,10 @@ export class AuthenticatedUserScreen extends React.Component<AuthenticatedUserSc
 
         this.setState({
             isLoading: false,
+            errorMessage: errorMessage,
             sortedPassportKeys: passportDataArray,
             passportData: passportData
         });
-        
     }
 
     // Render UI

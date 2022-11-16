@@ -63,6 +63,8 @@ export class StepUpScreen extends React.Component<StepUpScreenProps, State> {
             usePkce: true
         };
 
+        console.log(`Authentication StepUp request: ${JSON.stringify(request)}`);
+
         XmBindIdSdk.authenticate(request)
             .then((response: XmBindIdResponse) => {
                 console.log(`BindID Authentication Completed: ${JSON.stringify(response)}`);

@@ -1,7 +1,7 @@
 PODS:
   - bindid-react-native (1.0.2):
     - React-Core
-    - XmBindIdSDK (~> 1.30.0)
+    - XmBindIdSDK (~> 1.40.0)
   - boost (1.76.0)
   - CocoaAsyncSocket (7.6.5)
   - DoubleConversion (1.1.6)
@@ -355,11 +355,11 @@ PODS:
     - React-jsi (= 0.69.4)
     - React-logger (= 0.69.4)
     - React-perflogger (= 0.69.4)
-  - RNScreens (3.13.1):
+  - RNScreens (3.18.2):
     - React-Core
     - React-RCTImage
   - SocketRocket (0.6.0)
-  - XmBindIdSDK (1.30.0)
+  - XmBindIdSDK (1.40.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -516,7 +516,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  bindid-react-native: 903dbb76948e63798fe2102ad2ee5257dd422608
+  bindid-react-native: 96db5a2199aa6b7fab9d9257d2063173154bdcaf
   boost: a7c83b31436843459a1961bfd74b96033dc77234
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
@@ -562,12 +562,12 @@ SPEC CHECKSUMS:
   React-RCTVibration: 9adb4a3cbb598d1bbd46a05256f445e4b8c70603
   React-runtimeexecutor: 61ee22a8cdf8b6bb2a7fb7b4ba2cc763e5285196
   ReactCommon: 8f67bd7e0a6afade0f20718f859dc8c2275f2e83
-  RNScreens: 40a2cb40a02a609938137a1e0acfbf8fc9eebf19
+  RNScreens: 34cc502acf1b916c582c60003dc3089fa01dc66d
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
-  XmBindIdSDK: b39dddd3c5221feeab89413f3037501e99823bc9
+  XmBindIdSDK: 6ab3bb5561c857a04ee90929363ae1a589dd3953
   Yoga: ff994563b2fd98c982ca58e8cd9db2cdaf4dda74
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
 PODFILE CHECKSUM: 2afbee34aa701dd2f89f67316b91249dc6b498fa
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

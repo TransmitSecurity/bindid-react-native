@@ -10,6 +10,7 @@ import { StepUpScreen } from './StepUpScreen';
 import { AuthenticatedUserScreen } from './AuthenticatedUserScreen';
 
 import type {  XmBindIdServerEnvironment, XmBindIdConfig } from "../../src/transmit-bind-id-api";
+import {  XmBindIdTokenExchangePlatformMode } from "../../src/transmit-bind-id-api";
 
 const Stack = createNativeStackNavigator();
 
@@ -64,6 +65,8 @@ export default class App extends React.Component<Props, State> {
       clientId:  env.ClientID,
       serverEnvironment: serverEnvironment
     };
+
+    console.log(`SDK Configuration: ${JSON.stringify(config)}`);
 
     XmBindIdSdk.initialize(config)
     .then((success: boolean) => {

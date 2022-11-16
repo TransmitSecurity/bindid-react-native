@@ -11,6 +11,16 @@ Template
 #### EXPECTED MIGRATION CHANGES 
 --->
 
+## 1.1.0 - November 2022
+### Content
+#### New Features
+1. Added Token exchange platform mode enum to XmBindIdServerEnvironment to indicate the platform for token exchange.
+1. General bug fixes and performance improvement.
+
+### Upgrade
+1. Upgraded the iOS XmBindIdSDK framework version to 1.40.0.
+1. Upgraded the Android XmBindIdSDK library version to 1.30.0.
+
 ## 1.0.2 - August 2022
 ### Content
 #### Bug Fixes
