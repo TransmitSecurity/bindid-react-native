@@ -11,6 +11,12 @@ Template
 #### EXPECTED MIGRATION CHANGES 
 --->
 
+## 1.1.1 - July 2023
+### Content
+### Upgrade
+1. Upgraded the iOS XmBindIdSDK framework version to 1.70.0.
+1. Upgraded the Android XmBindIdSDK library version to 1.60.1.
+
 ## 1.1.0 - November 2022
 ### Content
 #### New Features
