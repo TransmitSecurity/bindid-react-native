@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
   s.dependency "React-Core"
-  s.dependency 'XmBindIdSDK', '~> 1.40.0'
+  s.dependency 'XmBindIdSDK', '~> 1.70.0'
 end
