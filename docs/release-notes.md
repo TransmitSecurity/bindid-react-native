@@ -11,7 +11,7 @@ Template
 #### EXPECTED MIGRATION CHANGES 
 --->
 
-## 1.1.1 - July 2023
+## 1.1.2 - July 2023
 ### Content
 ### Upgrade
 1. Upgraded the iOS XmBindIdSDK framework version to 1.70.0.
